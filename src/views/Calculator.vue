@@ -5,28 +5,7 @@
           <myoutput></myoutput>
         </div>
         <div class="control-panel">
-          <!-- Тут нужно поставить loop -->
-          <btn text="AC"></btn>
-          <btn text='+/-'></btn>
-          <btn></btn>
-          <btn :orange='true' text="÷"></btn>
-          <btn text='9'></btn>
-          <btn text='8'></btn>
-          <btn text='7'></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn :orange='true' text='-'></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn></btn>
-          <btn :orange='true' text='+'></btn>
-          
-          <btn></btn>
-          <btn></btn>
-          <btn text='.'></btn>
-          <btn :orange='true' text='='></btn>
+          <btn v-for='btn in buttons' :text='btn.text' :orange='btn.orange'></btn>
         </div>
       </div>
   </div>
@@ -43,14 +22,14 @@ export default {
 
   name: "calculator",
   data: () => ({
-
+    buttons: [{text:'AC'},{text:'+/-'},{},{text:'÷', orange: true},{text:'9'},{text:'8'},{text:'7'},{text:'*', orange: true},{text:'6'},{text:'5'},{text:'4'},{text:'-', orange: true},{text:'3'},{text:'2'},{text:'1'},{text:'+', orange: true},{text:'0'},{},{text:'.'},{text:'=', orange: true},]
   })
 }
 </script>
 <style lang="css" scoped>
   .calc-wrp{
     margin: 200px auto;
-    width: 328px;
+    width: 320px;
     height:1000px;
   }
   .calc{
