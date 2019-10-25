@@ -4,7 +4,13 @@ import router from "./router";
 import store from "./store";
 
 Vue.config.productionTip = false;
-
+// console.log(Math);
+Math.sum = (a, b) => {
+  return a+b
+}
+Math.minus = (a, b) => {
+  return a-b
+}
 new Vue({
   router,
   store,
